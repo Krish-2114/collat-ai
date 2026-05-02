@@ -1,0 +1,36 @@
+{
+  "version": "3.0.0",
+  "n_train": 18749,
+  "n_val": 2501,
+  "n_test": 3750,
+  "cities": [
+    "Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Hyderabad",
+    "Pune",
+    "Chennai",
+    "Kolkata",
+    "Ahmedabad"
+  ],
+  "metrics": {
+    "value": {
+      "test_mape_%": 2.49,
+      "target_met": "True",
+      "status": "\u2705"
+    },
+    "liquidity": {
+      "test_weighted_f1": 0.996,
+      "test_accuracy_%": 99.6,
+      "target_met": "True",
+      "status": "\u2705"
+    },
+    "fraud": {
+      "test_fpr_%": 4.13,
+      "target_met": true,
+      "status": "\u2705"
+    }
+  },
+  "timestamp": "2026-05-02T07:39:44.748364",
+  "model_dir": "models/"
+}

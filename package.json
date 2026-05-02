@@ -1,0 +1,16 @@
+{
+  "name": "collat-ai",
+  "private": true,
+  "description": "Run FastAPI + Vite frontend together for local demo / judging",
+  "workspaces": ["collat-ai-frontend"],
+  "scripts": {
+    "start": "node scripts/bootstrap-dev.mjs",
+    "dev": "concurrently -k -n api,web -c yellow,magenta \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "node scripts/start-api.mjs",
+    "dev:web": "npm run dev -w collat-ai-frontend",
+    "build:web": "npm run build -w collat-ai-frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
