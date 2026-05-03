@@ -209,7 +209,7 @@ These two cases from the live prototype demonstrate that the system correctly di
 | Tool | Minimum Version | Verify |
 |---|---|---|
 | **Node.js** | v18.0.0 | `node -v` |
-| **Python** | 3.11.0 (64-bit) | `python --version` |
+| **Python** |  Only 3.11.0 (64-bit) | `python --version` |
 
 Both must be available on your system `PATH`. Download from [nodejs.org](https://nodejs.org) and [python.org](https://python.org) if needed.
 
