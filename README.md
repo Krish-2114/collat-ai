@@ -844,7 +844,7 @@ Bhavik is the machine learning and backend architect of Collat.AI. He designed a
 
 **Email:** krish.shah23@spit.ac.in
 
-Krish designed and built the complete Collat.AI React frontend, including all six application pages (Home, Models, Portfolio, Valuation, Liquidity, Fraud), the real-time Pre-Analysis Market Intelligence panel with live Recharts visualisations, the authentication and portfolio management system, the SHAP driver visualisation tab, the LTV matrix and underwriting output tab, and the overall UX design system. He managed product direction — defining the loan officer user journey, the page flows across the three engine interfaces, and the visual design language of the platform.
+Krish designed and built the complete Collat.AI React frontend, including all six application pages (Home, Models, Portfolio, Valuation, Liquidity, Fraud), the real-time Pre-Analysis Market Intelligence panel with live Recharts visualisations, the authentication and portfolio management system,and underwriting output tab, and the overall UX design system. He managed product direction — defining the loan officer user journey, the page flows across the three engine interfaces, and the visual design language of the platform.
 
 ---
 
