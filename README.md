@@ -204,17 +204,33 @@ These two cases from the live prototype demonstrate that the system correctly di
 
 ## 3. Quick Start — Run the Full Stack
 
-### Prerequisites
+# 🚀 Collat.AI — Setup Guide
 
-| Tool        | Supported Version    | Verify             |
-| ----------- | -------------------- | ------------------ |
-| **Node.js** | v18.0.0+             | `node -v`          |
-| **Python**  | 3.10 – 3.11 (64-bit) | `python --version` |
+## Prerequisites
 
-Both must be available on your system `PATH`. Download from https://nodejs.org and https://python.org if needed.
+| Tool | Supported Version | Verify |
+|---|---|---|
+| **Node.js** | v18.0.0+ | `node -v` |
+| **Python** | 3.10 – 3.13 (64-bit) | `python --version` |
+
+Both must be added to your system `PATH`.
+
+Download:
+- Node.js → https://nodejs.org
+- Python → https://python.org
 
 ---
 
+> ⚠️ **Important Compatibility Note**
+> Python **3.14 is NOT supported** and may cause setup failures (e.g., missing pip or broken venv).
+> Please use Python **3.10–3.13 only**.
+
+---
+
+### 1. Open project folder
+
+```powershell
+cd C:\path\to\collat-ai-main
 ### Windows — PowerShell
 
 ```powershell
