@@ -223,7 +223,7 @@ cd C:\path\to\collat-ai-main
 npm start
 ```
 
-`npm start` is a fully automated bootstrap. It runs `scripts/bootstrap-dev.mjs` which handles the entire setup sequence — creating the Python virtual environment, installing Python dependencies from `requirements-api.txt` (the slim inference-only bundle, no PyTorch training stack required), running `npm install` across all workspaces, and then launching the FastAPI server and Vite frontend concurrently with colour-coded terminal output.
+`npm start` is a fully automated bootstrap. It runs `scripts/bootstrap-dev.mjs` which handles the entire setup sequence — creating the Python virtual environment, installing Python dependencies from `requirements-api.txt`, running `npm install` across all workspaces, and then launching the FastAPI server and Vite frontend concurrently with colour-coded terminal output.
 
 ### macOS / Linux / Git Bash
 
