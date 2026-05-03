@@ -206,22 +206,30 @@ These two cases from the live prototype demonstrate that the system correctly di
 
 ### Prerequisites
 
-| Tool | Minimum Version | Verify |
-|---|---|---|
-| **Node.js** | v18.0.0 | `node -v` |
-| **Python** |  Only 3.11.0 (64-bit) | `python --version` |
+| Tool        | Supported Version    | Verify             |
+| ----------- | -------------------- | ------------------ |
+| **Node.js** | v18.0.0+             | `node -v`          |
+| **Python**  | 3.10 – 3.11 (64-bit) | `python --version` |
 
-Both must be available on your system `PATH`. Download from [nodejs.org](https://nodejs.org) and [python.org](https://python.org) if needed.
+Both must be available on your system `PATH`. Download from https://nodejs.org and https://python.org if needed.
+
+---
 
 ### Windows — PowerShell
 
 ```powershell
 cd C:\path\to\collat-ai-main
-
 npm start
 ```
 
-`npm start` is a fully automated bootstrap. It runs `scripts/bootstrap-dev.mjs` which handles the entire setup sequence — creating the Python virtual environment, installing Python dependencies from `requirements-api.txt`, running `npm install` across all workspaces, and then launching the FastAPI server and Vite frontend concurrently with colour-coded terminal output.
+`npm start` runs `scripts/bootstrap-dev.mjs`, which:
+
+* Creates a Python virtual environment (`venv`)
+* Installs API dependencies from `requirements-api.txt`
+* Runs `npm install` across workspaces
+* Starts FastAPI (backend) and Vite (frontend) concurrently
+
+---
 
 ### macOS / Linux / Git Bash
 
@@ -233,34 +241,54 @@ npm start
 chmod +x run.sh && ./run.sh
 ```
 
+---
+
 ### Access the Running Application
 
-| Interface | URL |
-|---|---|
-| Collat.AI Frontend (React + Vite) | http://localhost:5173 |
-| FastAPI Swagger UI (Interactive API docs) | http://localhost:8000/docs |
-| API Health Check | http://localhost:8000/health |
-| OpenAPI 3.1 Schema | http://localhost:8000/openapi.json |
+| Interface               | URL                                |
+| ----------------------- | ---------------------------------- |
+| Frontend (React + Vite) | http://localhost:5173              |
+| FastAPI Swagger UI      | http://localhost:8000/docs         |
+| API Health Check        | http://localhost:8000/health       |
+| OpenAPI Schema          | http://localhost:8000/openapi.json |
+
+---
 
 ### Development Mode
 
 ```powershell
-npm run dev          # Both servers with shared terminal output
-npm run dev:api      # FastAPI backend only
-npm run dev:web      # Vite frontend only
-npm run build:web    # Production build of the frontend
-```
-
-### Environment Override
-
-To use a specific Python executable instead of the auto-detected venv:
-
-```powershell
-$env:COLLAT_PYTHON = "C:\Python311\python.exe"
-npm start
+npm run dev          # Both servers
+npm run dev:api      # Backend only
+npm run dev:web      # Frontend only
+npm run build:web    # Production build
 ```
 
 ---
+
+### Troubleshooting (Windows)
+
+If you see:
+
+```text
+No module named pip
+```
+
+Run:
+
+```powershell
+Remove-Item -Recurse -Force venv
+python -m ensurepip --upgrade
+python -m venv venv
+venv\Scripts\activate
+python -m pip install --upgrade pip
+```
+
+Then retry:
+
+```powershell
+npm start
+```
+
 
 ## 4. Platform Walkthrough — Every Page Explained
 
