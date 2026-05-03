@@ -22,8 +22,7 @@
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite)](https://vitejs.dev)
 [![XGBoost](https://img.shields.io/badge/XGBoost-2.0-FF6600?style=flat-square)](https://xgboost.ai)
 [![LightGBM](https://img.shields.io/badge/LightGBM-Liquidity%20Engine-02569B?style=flat-square)](https://lightgbm.readthedocs.io)
-[![SHAP](https://img.shields.io/badge/SHAP-Explainability-8B4513?style=flat-square)](https://shap.readthedocs.io)
-[![EfficientNet](https://img.shields.io/badge/EfficientNet--B0-CNN%20Vision-FF6F00?style=flat-square)](https://timm.fast.ai)
+
 
 <br/>
 
@@ -200,7 +199,6 @@ These two cases from the live prototype demonstrate that the system correctly di
 
 **Practical Deployability (15%)** — Single-command `npm start` launches the full stack. Interactive Swagger API at `/docs`. React frontend built for NBFC loan officer workflows — no data science background required to run an analysis.
 
-**Explainability (15%)** — SHAP feature attribution on every valuation, named value drivers and risk flags in the response payload, natural-language commentary per SHAP contribution, and a transparent Confidence Calibrator formula that shows exactly what raised or lowered the score.
 
 ---
 
@@ -444,11 +442,7 @@ Output Range: 0.30 to 0.92 continuous
 
 A confidence score below 0.50 automatically triggers a mandatory manual review flag in the underwriting output. Conformal Prediction is applied to ensure that the P10–P90 band provides at least 80% statistical coverage — meaning the true market price falls within the declared band in at least 80% of validation cases.
 
-### 5.5 Image Feature Extraction — EfficientNet-B0 CNN
 
-When a property image is submitted (exterior or interior photograph), it passes through EfficientNet-B0 (loaded via the `timm` library, `src/image_feature_extractor.py`) to extract a 1,280-dimensional feature vector. This vector is dimensionality-reduced to a condition score and a visual anomaly signal, which then feed into the Feature Engineering layer as additional inputs to all three models.
-
-The CNN component enables detection of visual fraud signals — borrower-staged photos that misrepresent interior quality, visible dilapidation on a property claiming "New" vintage, or mismatched construction quality vs the claimed sub-type. It also provides a measurable lift to confidence on properties where images are provided, because the additional modality reduces the uncertainty in the valuation bands.
 
 ---
 
