@@ -1,5 +1,23 @@
 import type { ValuationRequest } from '@/types/api.types'
 
+/** Hero line: type, locality, zone, city — e.g. "Apartment, Churchgate, South Mumbai". */
+export function formatPropertyHeroLine(req: ValuationRequest): string {
+  const parts: string[] = [req.property_type]
+  if (req.locality) parts.push(req.locality)
+  if (req.zone) parts.push(req.zone)
+  parts.push(req.city)
+  return parts.join(', ')
+}
+
+/** Single-line key specs for PDF snapshot. */
+export function formatPropertySpecsLine(req: ValuationRequest): string {
+  const bhk = `${req.bedrooms} BHK`
+  const floor = `Floor ${req.floor_number}/${req.total_floors}`
+  const age = `${req.age_years} years old`
+  const area = `${req.area_sqft.toLocaleString('en-IN')} sqft`
+  return `${area}  |  ${bhk}  |  ${floor}  |  ${age}  |  ${req.ownership_type}`
+}
+
 export function formatPropertyAddressLine(req: ValuationRequest): string {
   const parts: string[] = [req.city]
   if (req.zone) parts.push(req.zone)

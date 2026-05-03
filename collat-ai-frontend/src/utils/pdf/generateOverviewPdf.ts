@@ -27,7 +27,7 @@ const CONTENT: Record<
       {
         h: 'Core engines',
         body: [
-          'Value Engine: market, distress, and confidence with SHAP explainability.',
+          'Value Engine: market, distress, and confidence with plain-language value drivers for audit.',
           'Liquidity Engine: resale potential (RPI), time-to-liquidate, and exit certainty.',
           'Risk Engine: deterministic rules plus anomaly detection for documentation and collateral integrity.',
         ],
@@ -70,7 +70,7 @@ const CONTENT: Record<
         h: 'Value Engine',
         body: [
           'Inputs: city, locality, property type, area, age, floor, occupancy, infrastructure score.',
-          'Outputs: market value band, distress value, valuation band, confidence score — with SHAP drivers for audit.',
+          'Outputs: market value band, distress value, valuation band, confidence score — with key value factors for audit.',
         ],
       },
       {

@@ -68,6 +68,24 @@ export function drawSectionTitle(doc: jsPDF, title: string, y: number): number {
   return y + 8
 }
 
+/** Human-readable report section heading (sentence case, neutral rule). */
+export function drawReadableSectionTitle(doc: jsPDF, title: string, y: number): number {
+  const S = PDF.semantic
+  y = ensureY(doc, y, 14)
+  doc.setFont('helvetica', 'bold')
+  doc.setFontSize(12)
+  doc.setTextColor(...S.heading)
+  doc.text(title, PDF.margin, y)
+  const ruleY = y + 5
+  doc.setDrawColor(...S.track)
+  doc.setLineWidth(0.35)
+  doc.line(PDF.margin, ruleY, PDF.margin + PDF.contentW, ruleY)
+  doc.setFont('helvetica', 'normal')
+  doc.setFontSize(9)
+  doc.setTextColor(...S.body)
+  return ruleY + 7
+}
+
 export function ensureY(doc: jsPDF, y: number, blockH: number): number {
   if (y + blockH > PDF.footerY - 8) {
     doc.addPage()

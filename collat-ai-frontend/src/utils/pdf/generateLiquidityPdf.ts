@@ -76,7 +76,6 @@ export function generateLiquidityReportPdf(req: ValuationRequest, res: Valuation
   y = drawParagraph(doc, note, PDF.margin, y, PDF.contentW, 3.8)
 
   y = ensureY(doc, y, 48)
-  y = drawSectionTitle(doc, 'Top 5 SHAP liquidity drivers', y)
   y = writeShapDriversText(doc, y, res.shap_liquidity_drivers ?? [], 5)
 
   stampFooters(doc)

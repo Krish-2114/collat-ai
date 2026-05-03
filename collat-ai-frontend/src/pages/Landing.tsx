@@ -150,29 +150,23 @@ export default function Landing() {
           <div className="mt-10 grid gap-8 text-left md:grid-cols-3">
             {[
               {
-                step: '1',
-                title: 'Capture collateral facts',
-                body: 'Structured form aligned with the FastAPI schema — location, asset, compliance, and risk flags.',
+                title: 'Know your collateral',
+                body: 'Start with the property fundamentals your institution already tracks—where it is, what it is, and how it fits the book—so every review begins from the same clear snapshot.',
               },
               {
-                step: '2',
-                title: 'Engines score 100+ features',
-                body: 'Preprocessor hydrates engineered columns before XGBoost, LightGBM, and fraud ensembles execute.',
+                title: 'Intelligence in context',
+                body: 'We combine your inputs with ongoing market movement, local activity, and wider signals so you see how the asset compares to its surroundings—not a single figure in isolation.',
               },
               {
-                step: '3',
-                title: 'Actionable outputs',
-                body: 'Market bands, liquidity, fraud, SHAP drivers, and LTV-ready numbers in one response payload.',
+                title: 'From insight to action',
+                body: 'Move to a rounded view of value, liquidity, and risk in one place, delivered quickly so credit and collateral teams can align, explain their view, and decide with confidence.',
               },
             ].map((b) => (
               <motion.div
-                key={b.step}
+                key={b.title}
                 {...fade}
                 className="relative overflow-hidden rounded-2xl border-2 border-stone-200/90 bg-white p-6 shadow-md shadow-stone-900/[0.06] ring-1 ring-stone-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary-200/80 hover:shadow-xl hover:shadow-primary-600/[0.1]"
               >
-                <span className="absolute -left-2 -top-2 flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 font-mono text-sm font-bold text-white shadow-md shadow-primary-600/25">
-                  {b.step}
-                </span>
                 <Activity className="h-5 w-5 text-primary-600" aria-hidden />
                 <h3 className="mt-3 font-semibold text-stone-900">{b.title}</h3>
                 <p className="mt-2 text-sm text-stone-600">{b.body}</p>
